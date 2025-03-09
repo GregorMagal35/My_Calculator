@@ -1,5 +1,6 @@
 package com.example.my_calculator;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,7 +14,6 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     private EditText inputFirstNumber, inputSecondNumber;
-    private Button buttonPlus, buttonMinus, buttonMultiply, buttonDivide;
     private TextView textResult;
 
     @Override
@@ -29,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
         // Initialize views
         inputFirstNumber = findViewById(R.id.inputFirstNumber);
         inputSecondNumber = findViewById(R.id.inputSecondNumber);
-        buttonPlus = findViewById(R.id.buttonPlus);
-        buttonMinus = findViewById(R.id.buttonMinus);
-        buttonMultiply = findViewById(R.id.buttonMultiply);
-        buttonDivide = findViewById(R.id.buttonDivide);
+        Button buttonPlus = findViewById(R.id.buttonPlus);
+        Button buttonMinus = findViewById(R.id.buttonMinus);
+        Button buttonMultiply = findViewById(R.id.buttonMultiply);
+        Button buttonDivide = findViewById(R.id.buttonDivide);
         textResult = findViewById(R.id.textResult);
 
         // Set button listeners using lambdas
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         buttonDivide.setOnClickListener(v -> calculate('/'));
     }
 
+    @SuppressLint("SetTextI18n")
     private void calculate(char operator) {
         String first = inputFirstNumber.getText().toString();
         String second = inputSecondNumber.getText().toString();
