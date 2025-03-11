@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         String second = inputSecondNumber.getText().toString();
 
         if (first.isEmpty() || second.isEmpty()) {
-            textResult.setText("Please enter both numbers");
+            textResult.setText("Please fill in both fields");
             return;
         }
         try {
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                     if (num2 != 0) {
                         result = num1 / num2;
                     } else {
-                        textResult.setText("Cannot divide by zero");
+                        textResult.setText("Cannot divide by zero, duh");
                         return;
                     }
                     break;
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
             textResult.setText(String.valueOf(result));
         } catch (NumberFormatException e) {
-            textResult.setText("Invalid input");
+            textResult.setText("Invalid input, only integers and floating point numbers are accepted");
         }
     }
 }
